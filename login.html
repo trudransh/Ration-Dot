@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <title>RationDot</title>
+    <link rel="stylesheet" href="s1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="fullpage">
+        <div class="navbar">
+            <div>
+                <a href = "index.html">Cytrix
+                </a>
+            </div>
+            <nav>
+                <ul id = "MenuItems">
+                    <li><a href ="#">LOGIN</a></li>
+                    <li><a href ="home1.html">ADMIN</a></li>
+                    <li><a href ="#">CONTACT</a></li>
+                    <!-- <li><button class = "loginbtn" onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Login</button></li> -->
+                </ul>
+            </nav>
+            <!--navigation bar is finished-->
+        </div>
+        <div id='login-form'class='login-page'>
+            <!--creating the form-->
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+                    <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+                </div>
+                <!--login form creation-->
+                <form id='login' class='input-group-login'>
+                    <input type='text'class='input-field'placeholder='Email Id' required >
+		    <input type='password'class='input-field'placeholder='Enter Password' required>
+		    <input type='checkbox'class='check-box'><span>Remember Password</span>
+		    <li><a href = "home1.html"><button type='submit'class='submit-btn'>Log in</button></a></li></form>
+		 </form>
+         <!--creating the registration form-->
+		 <form id='register' class='input-group-register'>
+		     <input type='text'class='input-field'placeholder='First Name' required>
+		     <input type='text'class='input-field'placeholder='Last Name ' required>
+		     <input type='email'class='input-field'placeholder='Email Id' required>
+		     <input type='password'class='input-field'placeholder='Enter Password' required>
+		     <input type='password'class='input-field'placeholder='Confirm Password'  required>
+		     <input type='checkbox'class='check-box'><span>I agree to the terms and                                                   conditions</span>
+                    <button type='submit'class='submit-btn'>Register</button>
+	         </form>
+            </div>
+        </div>
+    </div>
+    <!--first script code is for login and registration form to move correctly-->
+    <script>
+        var x=document.getElementById('login');
+		var y=document.getElementById('register');
+		var z=document.getElementById('btn');
+		function register()
+		{
+			x.style.left='-400px';
+			y.style.left='50px';
+			z.style.left='110px';
+		}
+		function login()
+		{
+			x.style.left='50px';
+			y.style.left='450px';
+			z.style.left='0px';
+		}
+	</script>
+    <!--this code is for when we click login or registration page the form disappears-->
+	<script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+            {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
